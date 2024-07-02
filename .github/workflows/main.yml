@@ -61,5 +61,5 @@ jobs:
   publish:
     needs: build
     if: github.ref == 'refs/heads/main'
-    uses: YouPiterOn/test/.github/workflows/github-pages.yml@main
+    uses: kse-web-development-practice/project-task-tracker/.github/workflows/github-pages.yml@main
 
