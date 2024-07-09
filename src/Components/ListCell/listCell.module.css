@@ -1,0 +1,23 @@
+.listCell {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+@media (min-width: 400px) {
+    .listCell {
+        padding: 10px;
+    }
+}
+
+@media (min-width: 600px) {
+    .listCell {
+        padding: 12px;
+    }
+}
+
+@media (min-width: 992px) {
+    .listCell {
+        padding: 15px;
+    }
+}

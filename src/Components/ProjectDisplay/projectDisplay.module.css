@@ -1,0 +1,33 @@
+.projectDisplay {
+    font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    transition: all 0.3s ease;
+}
+
+.projectDisplay:hover {
+    background-color: #f0f8ff;
+  }
+
+.displayColumn {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+@media (min-width: 400px) {
+    .displayColumn {
+        padding: 10px;
+    }
+}
+
+
+@media (min-width: 600px) {
+    .displayColumn {
+        padding: 12px;
+    }
+}
+
+@media (min-width: 992px) {
+    .displayColumn {
+        padding: 15px;
+    }
+}

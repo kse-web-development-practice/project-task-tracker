@@ -1,0 +1,16 @@
+.taskDisplay {
+    font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    transition: all 0.3s ease;
+}
+
+.taskDisplay.completed {
+    background-color: #f0f6f1;
+}
+
+.taskDisplay.completed:hover {
+    background-color: #e2efe5;
+}
+
+.taskDisplay:hover {
+    background-color: #f0f8ff;
+}

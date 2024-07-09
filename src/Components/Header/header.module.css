@@ -1,0 +1,43 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #ddd;
+    font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.logo {
+    cursor: pointer;
+}
+
+.logo img {
+    height: 40px; /* Adjust as needed */
+}
+
+.projectName {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.auth {
+    display: flex;
+    gap: 10px;
+}
+
+.authButton {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.authButton:hover {
+    background-color: #0056b3;
+}
