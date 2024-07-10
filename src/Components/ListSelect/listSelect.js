@@ -19,5 +19,3 @@ ListSelect.PropTypes = {
     options: PropTypes.array.isRequired,
     onChange: PropTypes.func,
 }
-
-export default ListSelect;

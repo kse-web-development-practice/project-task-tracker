@@ -13,5 +13,3 @@ export const ListCell = ({ children }) => {
 ListCell.PropTypes = {
     children: PropTypes.node
 }
-
-export default ListCell

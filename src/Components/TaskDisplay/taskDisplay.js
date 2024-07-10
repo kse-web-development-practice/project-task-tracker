@@ -51,5 +51,3 @@ TaskDisplay.propTypes = {
     initialImportance: PropTypes.oneOf(importanceOptions).isRequired,
     initialIsCompleted: PropTypes.bool.isRequired,
 };
-
-export default TaskDisplay;

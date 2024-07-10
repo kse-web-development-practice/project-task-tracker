@@ -10,7 +10,7 @@ export default {
 
 export const Variant1 = {
     args: {
-      isAuthenticated: false
+      isAuthenticated: false,
     }
 }
 export const Variant2 = {

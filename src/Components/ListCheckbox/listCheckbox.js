@@ -17,5 +17,3 @@ ListCheckbox.PropTypes = {
     isToggled: PropTypes.bool.isRequired,
     onChange: PropTypes.func,
 }
-
-export default ListCheckbox;
