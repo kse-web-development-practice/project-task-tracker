@@ -2,7 +2,7 @@ import { fn } from '@storybook/test'
 import { ListSelect } from '../Components/ListSelect/listSelect'
 
 export default {
-  title: 'Example/ListSelect',
+  title: 'Components/ListSelect',
   component: ListSelect,
   tags: ['autodocs'],
   args: { onClick: fn() }
@@ -11,6 +11,6 @@ export default {
 export const Component = {
   args: {
     value: 'High',
-    options: ['High', 'Medium', 'Low'],
+    options: ['High', 'Medium', 'Low']
   }
 }

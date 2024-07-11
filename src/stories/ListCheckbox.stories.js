@@ -2,7 +2,7 @@ import { fn } from '@storybook/test'
 import { ListCheckbox } from '../Components/ListCheckbox/listCheckbox'
 
 export default {
-  title: 'Example/ListCheckbox',
+  title: 'Components/ListCheckbox',
   component: ListCheckbox,
   tags: ['autodocs'],
   args: { onClick: fn() }
@@ -10,12 +10,12 @@ export default {
 
 export const Toggled = {
   args: {
-    isToggled: true,
+    isToggled: true
   }
 }
 
 export const NotToggled = {
   args: {
-    isToggled: false,
+    isToggled: false
   }
 }

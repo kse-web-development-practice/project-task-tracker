@@ -1,15 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styles from './listCell.module.css';
+import React from 'react'
+import PropTypes from 'prop-types'
+import styles from './listCell.module.css'
 
 export const ListCell = ({ children }) => {
-    return (
-        <td className={styles.listCell}>
-            {children}
-        </td>
-    )
+  return <td className={styles.listCell}>{children}</td>
 }
 
-ListCell.PropTypes = {
-    children: PropTypes.node
+ListCell.propTypes = {
+  children: PropTypes.node
 }

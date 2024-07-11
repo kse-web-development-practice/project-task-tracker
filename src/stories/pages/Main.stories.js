@@ -1,26 +1,29 @@
 import { fn } from '@storybook/test'
-import { List } from '../Components/List/list'
+import { Main } from '../../pages/main'
 
 export default {
-  title: 'Components/List',
-  component: List,
+  title: 'Pages/Main',
+  component: Main,
   tags: ['autodocs'],
   args: { onClick: fn() }
 }
 
-export const Project = {
+export const Projects = {
   args: {
+    type: 'project',
+    name: '',
     items: [
       { name: 'Project Alpha', totalTasks: 10, completedTasks: 5, initialStatus: 'In progress' },
       { name: 'Project Beta', totalTasks: 8, completedTasks: 8, initialStatus: 'Completed' },
       { name: 'Project Gamma', totalTasks: 12, completedTasks: 7, initialStatus: 'In progress' }
-    ],
-    type: 'project'
+    ]
   }
 }
 
-export const Task = {
+export const Tasks = {
   args: {
+    type: 'task',
+    name: 'Project Alpha',
     items: [
       {
         name: 'Task 1',
@@ -40,7 +43,6 @@ export const Task = {
         initialImportance: 'Low',
         initialIsCompleted: false
       }
-    ],
-    type: 'task'
+    ]
   }
 }
