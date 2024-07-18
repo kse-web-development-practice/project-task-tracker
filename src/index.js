@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { Projects } from './pages/main'
+import { Main } from './pages/main'
 
 const App = () => {
-  return <Projects />
+  return <Main />
 }
 
 const root = ReactDOM.createRoot(document.getElementById('app'))

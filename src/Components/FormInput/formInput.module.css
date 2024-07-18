@@ -1,0 +1,29 @@
+.formDiv {
+  margin-bottom: 15px;
+}
+
+.formLabel {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.formInput {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+.formInput:hover {
+  border-color: #888;
+}
+
+.formInput:focus {
+  border-color: #555;
+  outline: none;
+  box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.1);
+}
