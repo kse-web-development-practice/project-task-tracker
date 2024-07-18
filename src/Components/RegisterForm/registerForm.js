@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
-import styles from './loginForm.module.css'
+import styles from './registerForm.module.css'
 import { FormInput } from '../FormInput/formInput'
 import { Button } from '../Button/button'
 
-export const LoginForm = () => {
+export const RegisterForm = () => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
+  const [repeatPassword, setRepeatPassword] = useState('')
   const [error, setError] = useState('')
 
   const handleSubmit = (event) => {
@@ -13,13 +14,13 @@ export const LoginForm = () => {
     if (!username || !password) {
       setError('Please fill in all fields.')
     } else {
-      // login func
+      // register func
       setError('')
     }
   }
 
   return (
-    <form className={styles.loginForm} onSubmit={handleSubmit}>
+    <form className={styles.registerForm} onSubmit={handleSubmit}>
       {error && <div className="error">{error}</div>}
       <FormInput
         labelText="Username:"
@@ -33,8 +34,14 @@ export const LoginForm = () => {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
+      <FormInput
+        labelText="Repeat password:"
+        type="password"
+        value={repeatPassword}
+        onChange={(e) => setRepeatPassword(e.target.value)}
+      />
       <Button isMain={true} type="submit">
-        Login
+        Register
       </Button>
     </form>
   )
