@@ -1,0 +1,42 @@
+.list {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 0.8em;
+    font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.headerColumn {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+@media (min-width: 400px) {
+    .list {
+        font-size: 0.9em;
+    }
+    .headerColumn {
+        padding: 10px;
+    }
+}
+
+@media (min-width: 600px) {
+    .list {
+        font-size: 1em;
+    }
+    .headerColumn {
+        padding: 12px;
+    }
+}
+
+@media (min-width: 992px) {
+    .list {
+        font-size: 1.1em;
+    }
+    .headerColumn {
+        padding: 15px;
+    }
+}

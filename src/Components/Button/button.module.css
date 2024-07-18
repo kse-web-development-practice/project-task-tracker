@@ -1,0 +1,45 @@
+.button {
+  font-size: 0.8em;
+  border: 1px solid #20bc30;
+  color: #1ba028;
+  background-color: #fff;
+  padding: 4px 5px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.button:focus,
+.button:hover {
+  background-color: #20bc30;
+  color: #fff;
+}
+
+.button.main {
+  background-color: #20bc30;
+  border: 1px solid #20bc30;
+  color: #fff;
+}
+.button.main:hover,
+.button.main:focus {
+  background-color: #fff;
+  color: #1ba028;
+}
+
+@media (min-width: 400px) {
+  .button {
+      padding: 6px 8px;
+  }
+}
+
+@media (min-width: 600px) {
+  .button {
+      padding: 7px 10px;
+  }
+}
+
+@media (min-width: 992px) {
+  .button {
+      padding: 8px 12px;
+  }
+}

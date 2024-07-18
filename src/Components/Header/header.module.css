@@ -1,0 +1,56 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 12px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #ddd;
+    font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.logo {
+    cursor: pointer;
+}
+
+.logo img {
+    height: 40px; /* Adjust as needed */
+}
+
+.projectName {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.auth {
+    display: flex;
+    gap: 4px;
+}
+
+@media (min-width: 400px) {
+    .header {
+        padding: 8px 16px;
+    }
+    .auth {
+        gap: 6px;
+    }
+}
+
+@media (min-width: 600px) {
+    .header {
+        padding: 9px 18px;
+    }
+    .auth {
+        gap: 8px;
+    }
+}
+
+@media (min-width: 992px) {
+    .header {
+        padding: 10px 20px;
+    }
+    .auth {
+        gap: 10px;
+    }
+}
