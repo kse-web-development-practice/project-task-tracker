@@ -9,7 +9,5 @@ export default {
 }
 
 export const Page = {
-  args: {
-
-  }
+  args: {}
 }
