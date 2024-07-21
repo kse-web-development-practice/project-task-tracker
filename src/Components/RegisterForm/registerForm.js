@@ -1,22 +1,35 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+import PropTypes from 'prop-types'
 import styles from './registerForm.module.css'
 import { FormInput } from '../FormInput/formInput'
 import { Button } from '../Button/button'
+import { UserContext } from '../../user-context'
+import { useNavigate } from 'react-router-dom'
 
-export const RegisterForm = () => {
+export const RegisterForm = ({ registerFunc }) => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [repeatPassword, setRepeatPassword] = useState('')
   const [error, setError] = useState('')
 
+  const userContext = useContext(UserContext)
+
+  const navigate = useNavigate()
+
   const handleSubmit = (event) => {
     event.preventDefault()
     if (!username || !password) {
       setError('Please fill in all fields.')
-    } else {
-      // register func
-      setError('')
+      return
     }
+    const user = registerFunc(username, password)
+    if (!user) {
+      setError('User already exist.')
+      return
+    }
+    userContext.setUser(user.username, user.token)
+    navigate('/')
+    setError('')
   }
 
   return (
@@ -45,4 +58,8 @@ export const RegisterForm = () => {
       </Button>
     </form>
   )
+}
+
+RegisterForm.propTypes = {
+  registerFunc: PropTypes.func
 }

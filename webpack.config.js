@@ -8,7 +8,7 @@ const localEnv = dotenv.config().parsed
 
 module.exports = (env) => {
     return {
-        entry: './src/index.js',
+        entry: path.resolve(__dirname, './src/index.js'),
         mode: env.dev === true ? 'development' : 'production',
         output: {
             filename: 'main.js',
@@ -78,7 +78,7 @@ module.exports = (env) => {
                 directory: path.join(__dirname, 'dist')
             },
             compress: false,
-            port: 3000,
+            port: 4000,
             historyApiFallback: {
                 index: 'index.html'
             }
