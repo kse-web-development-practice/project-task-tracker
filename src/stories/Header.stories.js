@@ -16,6 +16,6 @@ export const Variant1 = {
 export const Variant2 = {
   args: {
     isAuthenticated: true,
-    projectName: 'Project Alpha'
+    pageName: 'Project Alpha'
   }
 }

@@ -63,13 +63,9 @@ module.exports = (env) => {
                 context: path.resolve(__dirname, 'src')
             }),
             new webpack.DefinePlugin({
-                'process.env.BASE_URL': JSON.stringify(process.env.BASE_URL),
-                'process.env.MAP_KEY': localEnv.MAP_KEY
-                    ? JSON.stringify(localEnv.MAP_KEY)
-                    : JSON.stringify(process.env.MAP_KEY),
-                'process.env.API_KEY': localEnv.API_KEY
-                    ? JSON.stringify(localEnv.API_KEY)
-                    : JSON.stringify(process.env.MAP_KEY)
+                'process.env.API_BASE_URL': localEnv.API_BASE_URL
+                    ? JSON.stringify(localEnv.API_BASE_URL)
+                    : JSON.stringify(process.env.API_BASE_URL),
             })
         ],
         devtool: env.dev ? 'eval-source-map' : 'source-map',

@@ -1,116 +1,84 @@
-let fetchFn
-let baseUrl
-let apiKey
-
-function init(url, key, fetchAPI) {
-  fetchFn = fetchAPI
-  baseUrl = url
-  apiKey = key
-}
-
-async function auth(username, password) {
-  return searchUser({
+async function loginUser(username, password) {
+  const user = {
     username,
     password
-  })
-}
-
-async function getUser(token) {
-  return searchUser({
-    token
-  })
-}
-
-async function searchUser(query) {
-  const searchParams = new URLSearchParams()
-  searchParams.append('q', JSON.stringify(query))
-
-  const url = `${baseUrl}/rest/appusers?${searchParams.toString()}`
-
-  const headers = {
-    'cache-control': 'no-cache',
-    'x-apikey': apiKey
   }
 
-  const res = await fetchFn(url, {
-    method: 'GET',
-    headers
-  })
-
-  if (!res.ok || res.status !== 200) {
-    throw new Error(`Error: ${res.statusText}`)
-  }
-
-  const data = await res.json()
-  if (data.length < 1) {
-    return null
-  }
-
-  return data[0]
-}
-
-async function addUser(username, password) {
-  const url = `${baseUrl}/rest/appusers`
-  console.log(isUserExist(username))
-  if (isUserExist(username)) {
-    return null
-  }
-
-  const user = {
-    username: username,
-    password: password
-  }
-
-  const headers = {
-    'Content-Type': 'application/json',
-    'cache-control': 'no-cache',
-    'x-apikey': apiKey
-  }
-
-  const res = await fetchFn(url, {
+  const response = await fetch(`http://localhost:3000/user/login`, {
     method: 'POST',
-    headers,
+    headers: {
+      'Content-Type': 'application/json'
+    },
     body: JSON.stringify(user)
   })
-  console.log(res)
-  if (!res.ok || res.status !== 201) {
-    throw new Error(`Error: ${res.statusText}`)
+
+  if (response.status == 500) {
+    throw new Error(`Error: ${response.statusText}`)
   }
-  console.log(data)
-  const data = await res.json()
-  return data
+
+  if (!response.ok) {
+    return null
+  }
+
+  const body = await response.json()
+  const token = body.token
+
+  user.token = token
+
+  return user
 }
 
-async function isUserExist(username) {
-  const searchParams = new URLSearchParams()
-  searchParams.append('q', JSON.stringify({ username }))
-
-  const url = `${baseUrl}/rest/appusers?${searchParams.toString()}`
-
-  const headers = {
-    'cache-control': 'no-cache',
-    'x-apikey': apiKey
+async function registerUser(username, password) {
+  const user = {
+    username,
+    password
   }
 
-  const res = await fetchFn(url, {
-    method: 'GET',
-    headers
+  const response = await fetch(`http://localhost:3000/user/register`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(user)
   })
 
-  if (!res.ok || res.status !== 200) {
-    throw new Error(`Error: ${res.statusText}`)
+  if (response.status == 500) {
+    throw new Error(`Error: ${response.statusText}`)
   }
 
-  const data = await res.json()
-  if (data.length > 0) {
-    return true
+  if (!response.ok) {
+    return null
   }
-  return false
+
+  const token = response.json().token
+
+  user.token = token
+
+  return user
+}
+
+async function verifyToken(token) {
+  const response = await fetch(`http://localhost:3000/user/token`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ token: token })
+  })
+
+  if (response.status == 500) {
+    throw new Error(`Error: ${response.statusText}`)
+  }
+
+  if (!response.ok) {
+    return null
+  }
+
+  return response.body.username
 }
 
 export default {
-  init,
-  auth,
-  getUser,
-  addUser
+  loginUser,
+  registerUser,
+  verifyToken
 }

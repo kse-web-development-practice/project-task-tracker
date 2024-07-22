@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import PropTypes from 'prop-types'
 import styles from './header.module.css'
 import { Button } from '../Button/button'
 import { useNavigate } from 'react-router-dom'
+import { UserContext } from '../../user-context'
 import logo from './logo.png'
 
-export const Header = ({ projectName, isAuthenticated }) => {
+export const Header = ({ pageName, isAuthenticated }) => {
+  const userContext = useContext(UserContext)
   const navigate = useNavigate()
 
   const onLogoClick = () => {
@@ -17,14 +19,16 @@ export const Header = ({ projectName, isAuthenticated }) => {
   const onSignupClick = () => {
     navigate('/register')
   }
-  const onLogoutClick = () => {}
+  const onLogoutClick = () => {
+    userContext.logout()
+  }
 
   return (
     <header className={styles.header}>
       <div className={styles.logo} onClick={onLogoClick}>
         <img src={logo} alt="Logo" />
       </div>
-      <div className={styles.projectName}>{projectName || 'Overview'}</div>
+      <div className={styles.projectName}>{pageName || 'Overview'}</div>
 
       {isAuthenticated ? (
         <Button onClick={onLogoutClick}>Logout</Button>
@@ -41,6 +45,6 @@ export const Header = ({ projectName, isAuthenticated }) => {
 }
 
 Header.propTypes = {
-  projectName: PropTypes.string,
+  pageName: PropTypes.string,
   isAuthenticated: PropTypes.bool.isRequired
 }

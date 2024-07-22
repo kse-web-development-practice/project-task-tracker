@@ -26,7 +26,8 @@ export const TaskDisplay = ({ name, deadline, initialImportance, initialIsComple
       <ListCell>
         <ListSelect
           value={importance}
-          options={importanceOptions}se
+          options={importanceOptions}
+          se
           onChange={handleImportanceChange}
         />
       </ListCell>

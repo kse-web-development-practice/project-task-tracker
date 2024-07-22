@@ -1,21 +1,34 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import styles from './loginForm.module.css'
+import PropTypes from 'prop-types'
 import { FormInput } from '../FormInput/formInput'
 import { Button } from '../Button/button'
+import { UserContext } from '../../user-context'
+import { useNavigate } from 'react-router-dom'
 
-export const LoginForm = () => {
+export const LoginForm = ({ loginFunc }) => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
 
-  const handleSubmit = (event) => {
+  const userContext = useContext(UserContext)
+
+  const navigate = useNavigate()
+
+  async function handleSubmit(event) {
     event.preventDefault()
     if (!username || !password) {
       setError('Please fill in all fields.')
-    } else {
-      // login func
-      setError('')
+      return
     }
+    const user = await loginFunc(username, password)
+    if (!user) {
+      setError('User already exist.')
+      return
+    }
+    userContext.setUser(user.username, user.token)
+    navigate('/')
+    setError('')
   }
 
   return (
@@ -38,4 +51,8 @@ export const LoginForm = () => {
       </Button>
     </form>
   )
+}
+
+LoginForm.propTypes = {
+  loginFunc: PropTypes.func
 }

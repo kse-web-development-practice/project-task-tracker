@@ -16,13 +16,17 @@ export const RegisterForm = ({ registerFunc }) => {
 
   const navigate = useNavigate()
 
-  const handleSubmit = (event) => {
+  async function handleSubmit(event) {
     event.preventDefault()
     if (!username || !password) {
       setError('Please fill in all fields.')
       return
     }
-    const user = registerFunc(username, password)
+    if (password != repeatPassword) {
+      setError('Incorrect password repeat.')
+      return
+    }
+    const user = await registerFunc(username, password)
     if (!user) {
       setError('User already exist.')
       return

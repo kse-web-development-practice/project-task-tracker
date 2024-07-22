@@ -7,11 +7,9 @@ import { Login } from './pages/login'
 import { Register } from './pages/register'
 import { UserContext } from './user-context'
 
-userClient.init('https://wdpdb-9d95.restdb.io', process.env.API_KEY, fetch)
-
 const router = createBrowserRouter([
   {
-    element: <Main />,
+    element: <Main type="project" />,
 
     path: '/'
   },
@@ -32,13 +30,13 @@ const App = () => {
   const [token, setToken] = useState(null)
   useEffect(() => {
     const token = localStorage.getItem('token')
+    console.log(token)
     if (!token) return
-    userClient.getUser(token).then((user) => {
-      if (!user) return
+    const newUsername = userClient.verifyToken(token)
+    if (!newUsername) return
 
-      setUsername(user.username)
-      setToken(user.token)
-    })
+    setUsername(newUsername)
+    setToken(token)
   }, [])
   return (
     <UserContext.Provider
@@ -63,6 +61,10 @@ const App = () => {
     </UserContext.Provider>
   )
 }
+const appDiv = document.createElement('div')
+appDiv.id = 'app'
+document.body.appendChild(appDiv)
+
 const root = ReactDOM.createRoot(document.getElementById('app'))
 
 root.render(<App />)
