@@ -4,6 +4,10 @@
     text-align: left;
 }
 
+.clickable {
+    cursor: pointer;
+}
+
 @media (min-width: 400px) {
     .listCell {
         padding: 10px;

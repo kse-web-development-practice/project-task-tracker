@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from 'react'
-import PropTypes from 'prop-types'
 import { Layout } from '../Components/Layout/layout'
 import { Header } from '../Components/Header/header'
 import { List } from '../Components/List/list'
@@ -8,7 +7,7 @@ import { Button } from '../Components/Button/button'
 import { useNavigate } from 'react-router-dom'
 import projectClient from '../clients/project/projectClient'
 
-export const Main = ({ type }) => {
+export const Main = () => {
   const [projects, setProjects] = useState([])
 
   const userContext = useContext(UserContext)
@@ -45,11 +44,7 @@ export const Main = ({ type }) => {
       <Button isMain onClick={addFunc}>
         Add
       </Button>
-      <List type={type} items={projects} />
+      <List type={'project'} items={projects} />
     </Layout>
   )
-}
-
-Main.propTypes = {
-  type: PropTypes.oneOf(['project', 'task']).isRequired
 }

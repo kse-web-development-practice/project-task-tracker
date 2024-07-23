@@ -75,9 +75,7 @@ module.exports = (env) => {
             },
             compress: false,
             port: 4000,
-            historyApiFallback: {
-                index: 'index.html'
-            }
+            historyApiFallback: true
         }
     }
 }

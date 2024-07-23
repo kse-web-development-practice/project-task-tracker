@@ -13,7 +13,6 @@ export const FormTextarea = ({ labelText, value, onChange }) => {
 
 FormTextarea.propTypes = {
   labelText: PropTypes.string,
-  type: PropTypes.string.isRequired,
   value: PropTypes.string,
   onChange: PropTypes.func
 }

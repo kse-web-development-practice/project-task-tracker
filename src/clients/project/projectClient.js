@@ -46,7 +46,29 @@ async function getProjectsByUser(ownerUsername) {
   return body.projects
 }
 
+async function updateProject(id, updates) {
+  const response = await fetch(`${process.env.API_BASE_URL}/project/update/${id}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(updates)
+  })
+
+  if (response.status === 500) {
+    throw new Error(`Error: ${response.statusText}`)
+  }
+
+  if (!response.ok) {
+    return null
+  }
+
+  const body = await response.json()
+  return body
+}
+
 export default {
   addProject,
-  getProjectsByUser
+  getProjectsByUser,
+  updateProject
 }

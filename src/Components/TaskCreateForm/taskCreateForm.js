@@ -1,23 +1,28 @@
 import React, { useState } from 'react'
 import styles from './taskCreateForm.module.css'
+import PropTypes from 'prop-types'
 import { FormInput } from '../FormInput/formInput'
 import { Button } from '../Button/button'
 import { FormTextarea } from '../FormTextarea/formTextarea'
+import { useNavigate } from 'react-router-dom'
 
-export const TaskCreateForm = () => {
+export const TaskCreateForm = ({ createFunc, projectId }) => {
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
   const [deadline, setDeadline] = useState('')
   const [error, setError] = useState('')
 
-  const handleSubmit = (event) => {
+  const navigate = useNavigate()
+
+  const handleSubmit = async (event) => {
     event.preventDefault()
-    if (!title) {
-      setError('Enter task title.')
-    } else {
-      // post func
-      setError('')
+    if (!title || !deadline) {
+      setError('Enter title and deadline.')
+      return
     }
+    await createFunc(title, description, deadline, 'Low', false, projectId)
+    setError('')
+    navigate(`/tasks/${projectId}`)
   }
 
   return (
@@ -45,4 +50,9 @@ export const TaskCreateForm = () => {
       </Button>
     </form>
   )
+}
+
+TaskCreateForm.propTypes = {
+  createFunc: PropTypes.func,
+  projectId: PropTypes.string
 }

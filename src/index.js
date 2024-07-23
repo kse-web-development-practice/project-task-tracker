@@ -7,6 +7,8 @@ import { Login } from './pages/login'
 import { Register } from './pages/register'
 import { UserContext } from './user-context'
 import { ProjectCreate } from './pages/projectCreate'
+import { Tasks } from './pages/tasks'
+import { TaskCreate } from './pages/taskCreate'
 
 const router = createBrowserRouter([
   {
@@ -18,6 +20,16 @@ const router = createBrowserRouter([
     element: <ProjectCreate />,
 
     path: '/create'
+  },
+  {
+    element: <TaskCreate />,
+
+    path: '/tasks/create/:id'
+  },
+  {
+    element: <Tasks />,
+
+    path: '/tasks/:id'
   },
   {
     element: <Login />,
