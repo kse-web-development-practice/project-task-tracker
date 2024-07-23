@@ -4,7 +4,7 @@ async function loginUser(username, password) {
     password
   }
 
-  const response = await fetch(`http://localhost:3000/user/login`, {
+  const response = await fetch(`${process.env.API_BASE_URL}/user/login`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -34,7 +34,7 @@ async function registerUser(username, password) {
     password
   }
 
-  const response = await fetch(`http://localhost:3000/user/register`, {
+  const response = await fetch(`${process.env.API_BASE_URL}/user/register`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -50,7 +50,8 @@ async function registerUser(username, password) {
     return null
   }
 
-  const token = response.json().token
+  const body = await response.json()
+  const token = body.token
 
   user.token = token
 
@@ -58,7 +59,7 @@ async function registerUser(username, password) {
 }
 
 async function verifyToken(token) {
-  const response = await fetch(`http://localhost:3000/user/token`, {
+  const response = await fetch(`${process.env.API_BASE_URL}/user/token`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -74,7 +75,10 @@ async function verifyToken(token) {
     return null
   }
 
-  return response.body.username
+  const body = await response.json()
+  const username = body.username
+
+  return username
 }
 
 export default {

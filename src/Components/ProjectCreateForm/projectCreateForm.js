@@ -1,22 +1,27 @@
 import React, { useState } from 'react'
 import styles from './projectCreateForm.module.css'
+import PropTypes from 'prop-types'
 import { FormInput } from '../FormInput/formInput'
 import { Button } from '../Button/button'
 import { FormTextarea } from '../FormTextarea/formTextarea'
+import { useNavigate } from 'react-router-dom'
 
-export const ProjectCreateForm = () => {
+export const ProjectCreateForm = ({ createFunc, username }) => {
   const [name, setName] = useState('')
   const [description, setDescription] = useState('')
   const [error, setError] = useState('')
 
-  const handleSubmit = (event) => {
+  const navigate = useNavigate()
+
+  const handleSubmit = async (event) => {
     event.preventDefault()
     if (!name) {
       setError('Enter project name.')
-    } else {
-      // post func
-      setError('')
+      return
     }
+    await createFunc(name, description, 'Not started', username)
+    setError('')
+    navigate('/')
   }
 
   return (
@@ -38,4 +43,9 @@ export const ProjectCreateForm = () => {
       </Button>
     </form>
   )
+}
+
+ProjectCreateForm.propTypes = {
+  createFunc: PropTypes.func,
+  username: PropTypes.string
 }

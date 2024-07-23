@@ -15,7 +15,3 @@ Button.propTypes = {
   onClick: PropTypes.func,
   isMain: PropTypes.bool
 }
-
-Button.defaultProps = {
-  isMain: false
-}

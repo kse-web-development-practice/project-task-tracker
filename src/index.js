@@ -6,12 +6,18 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { Login } from './pages/login'
 import { Register } from './pages/register'
 import { UserContext } from './user-context'
+import { ProjectCreate } from './pages/projectCreate'
 
 const router = createBrowserRouter([
   {
     element: <Main type="project" />,
 
     path: '/'
+  },
+  {
+    element: <ProjectCreate />,
+
+    path: '/create'
   },
   {
     element: <Login />,
@@ -28,15 +34,19 @@ const router = createBrowserRouter([
 const App = () => {
   const [username, setUsername] = useState(null)
   const [token, setToken] = useState(null)
-  useEffect(() => {
-    const token = localStorage.getItem('token')
-    console.log(token)
-    if (!token) return
-    const newUsername = userClient.verifyToken(token)
-    if (!newUsername) return
 
-    setUsername(newUsername)
-    setToken(token)
+  useEffect(() => {
+    const getUser = async () => {
+      const token = localStorage.getItem('token')
+      if (!token) return
+      const newUsername = await userClient.verifyToken(token)
+      if (!newUsername) return
+
+      setUsername(newUsername)
+      setToken(token)
+    }
+
+    getUser()
   }, [])
   return (
     <UserContext.Provider

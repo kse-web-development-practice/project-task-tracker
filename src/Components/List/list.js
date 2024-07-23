@@ -37,7 +37,7 @@ export const List = ({ items, type }) => {
               name={item.name}
               totalTasks={item.totalTasks}
               completedTasks={item.completedTasks}
-              initialStatus={item.initialStatus}
+              initialStatus={item.status}
             />
           )
         } else if (type === 'task') {
