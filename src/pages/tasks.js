@@ -6,9 +6,12 @@ import { UserContext } from '../user-context'
 import { Button } from '../Components/Button/button'
 import { useNavigate, useParams } from 'react-router-dom'
 import taskClient from '../clients/task/taskClient'
+import projectClient from '../clients/project/projectClient'
 
 export const Tasks = () => {
   const [tasks, setTasks] = useState([])
+  const [description, setDescription] = useState('')
+  const [pageName, setPageName] = useState('')
 
   const userContext = useContext(UserContext)
   const navigate = useNavigate()
@@ -30,21 +33,29 @@ export const Tasks = () => {
       if (isAuthenticated) {
         const items = await taskClient.getTasksByProjectId(id)
         setTasks(items)
-      } else {
-        setTasks([])
+      }
+    }
+
+    const getProject = async () => {
+      if (isAuthenticated) {
+        const project = await projectClient.getProjectById(id)
+        setDescription(project.description)
+        setPageName(project.name)
       }
     }
 
     getTasks()
+    getProject()
   }, [isAuthenticated])
 
   return (
     <Layout>
-      <Header isAuthenticated={isAuthenticated} />
+      <Header pageName={pageName} isAuthenticated={isAuthenticated} />
       <Button isMain onClick={addFunc}>
         Add
       </Button>
       <List type={'task'} items={tasks} />
+      {description}
     </Layout>
   )
 }
