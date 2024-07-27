@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TaskDisplay Component snapshot 1`] = `
+<DocumentFragment>
+  <table>
+    <tbody>
+      <tr
+        class="taskDisplay "
+      >
+        <td
+          class="listCell"
+        >
+          Task 1
+        </td>
+        <td
+          class="listCell"
+        >
+          2024-12-31
+        </td>
+        <td
+          class="listCell"
+        >
+          <select
+            class="listSelect"
+          >
+            <option
+              value="High"
+            >
+              High
+            </option>
+            <option
+              value="Medium"
+            >
+              Medium
+            </option>
+            <option
+              value="Low"
+            >
+              Low
+            </option>
+          </select>
+        </td>
+        <td
+          class="listCell"
+        >
+          <span
+            style="width: 100%; display: flex; justify-content: space-between;"
+          >
+            <span
+              style="width: 30px; display: inline-block;"
+            >
+              No
+            </span>
+            <input
+              class="listCheckbox"
+              type="checkbox"
+            />
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</DocumentFragment>
+`;

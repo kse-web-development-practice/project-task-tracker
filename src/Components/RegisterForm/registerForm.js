@@ -46,12 +46,14 @@ export const RegisterForm = ({ registerFunc }) => {
         onChange={(e) => setUsername(e.target.value)}
       />
       <FormInput
+        testId="password-input"
         labelText="Password:"
         type="password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
       <FormInput
+        testId="repeat-password-input"
         labelText="Repeat password:"
         type="password"
         value={repeatPassword}

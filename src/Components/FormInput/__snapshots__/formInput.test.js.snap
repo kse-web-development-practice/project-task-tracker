@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormInput Component date 1`] = `
+<DocumentFragment>
+  <label
+    class="formLabel"
+  >
+    Date
+    <input
+      class="formInput"
+      type="date"
+      value=""
+    />
+  </label>
+</DocumentFragment>
+`;
+
+exports[`FormInput Component default 1`] = `
+<DocumentFragment>
+  <label
+    class="formLabel"
+  >
+    Username
+    <input
+      class="formInput"
+      type="text"
+      value=""
+    />
+  </label>
+</DocumentFragment>
+`;
+
+exports[`FormInput Component password 1`] = `
+<DocumentFragment>
+  <label
+    class="formLabel"
+  >
+    Password
+    <input
+      class="formInput"
+      type="password"
+      value=""
+    />
+  </label>
+</DocumentFragment>
+`;

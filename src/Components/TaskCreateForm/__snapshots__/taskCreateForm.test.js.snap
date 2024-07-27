@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TaskCreateForm Component default snapshot 1`] = `
+<DocumentFragment>
+  <form
+    class="taskCreateForm"
+  >
+    <label
+      class="formLabel"
+    >
+      Task Title:
+      <input
+        class="formInput"
+        type="text"
+        value=""
+      />
+    </label>
+    <label
+      class="formLabel"
+    >
+      Task Description:
+      <textarea
+        class="formTextarea"
+      />
+    </label>
+    <label
+      class="formLabel"
+    >
+      Deadline:
+      <input
+        class="formInput"
+        type="date"
+        value=""
+      />
+    </label>
+    <button
+      class="button main"
+    >
+      Create Task
+    </button>
+  </form>
+</DocumentFragment>
+`;
+
+exports[`TaskCreateForm Component error snapshot 1`] = `
+<DocumentFragment>
+  <form
+    class="taskCreateForm"
+  >
+    <div
+      class="error"
+    >
+      Enter title and deadline.
+    </div>
+    <label
+      class="formLabel"
+    >
+      Task Title:
+      <input
+        class="formInput"
+        type="text"
+        value=""
+      />
+    </label>
+    <label
+      class="formLabel"
+    >
+      Task Description:
+      <textarea
+        class="formTextarea"
+      />
+    </label>
+    <label
+      class="formLabel"
+    >
+      Deadline:
+      <input
+        class="formInput"
+        type="date"
+        value=""
+      />
+    </label>
+    <button
+      class="button main"
+    >
+      Create Task
+    </button>
+  </form>
+</DocumentFragment>
+`;
