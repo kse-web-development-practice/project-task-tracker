@@ -21,6 +21,7 @@ export const Header = ({ pageName, isAuthenticated }) => {
   }
   const onLogoutClick = () => {
     userContext.logout()
+    navigate('/')
   }
 
   return (

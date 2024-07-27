@@ -30,7 +30,7 @@ export const TaskCreateForm = ({ createFunc, projectId }) => {
       {error && <div className="error">{error}</div>}
       <FormInput
         labelText="Task Title:"
-        type="text"
+        type=""
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       />
