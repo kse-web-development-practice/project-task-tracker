@@ -1,0 +1,149 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RegisterForm Component default snapshot 1`] = `
+<DocumentFragment>
+  <form
+    class="registerForm"
+  >
+    <label
+      class="formLabel"
+    >
+      Username:
+      <input
+        class="formInput"
+        type=""
+        value=""
+      />
+    </label>
+    <label
+      class="formLabel"
+    >
+      Password:
+      <input
+        class="formInput"
+        data-testid="password-input"
+        type="password"
+        value=""
+      />
+    </label>
+    <label
+      class="formLabel"
+    >
+      Repeat password:
+      <input
+        class="formInput"
+        data-testid="repeat-password-input"
+        type="password"
+        value=""
+      />
+    </label>
+    <button
+      class="button main "
+    >
+      Register
+    </button>
+  </form>
+</DocumentFragment>
+`;
+
+exports[`RegisterForm Component empty fields error snapshot 1`] = `
+<DocumentFragment>
+  <form
+    class="registerForm"
+  >
+    <div
+      class="error"
+    >
+      Please fill in all fields.
+    </div>
+    <label
+      class="formLabel"
+    >
+      Username:
+      <input
+        class="formInput"
+        type=""
+        value=""
+      />
+    </label>
+    <label
+      class="formLabel"
+    >
+      Password:
+      <input
+        class="formInput"
+        data-testid="password-input"
+        type="password"
+        value=""
+      />
+    </label>
+    <label
+      class="formLabel"
+    >
+      Repeat password:
+      <input
+        class="formInput"
+        data-testid="repeat-password-input"
+        type="password"
+        value=""
+      />
+    </label>
+    <button
+      class="button main "
+    >
+      Register
+    </button>
+  </form>
+</DocumentFragment>
+`;
+
+exports[`RegisterForm Component passwords not match error snapshot 1`] = `
+<DocumentFragment>
+  <form
+    class="registerForm"
+  >
+    <div
+      class="error"
+    >
+      Incorrect password repeat.
+    </div>
+    <label
+      class="formLabel"
+    >
+      Username:
+      <input
+        class="formInput"
+        type=""
+        value="testUser"
+      />
+    </label>
+    <label
+      class="formLabel"
+    >
+      Password:
+      <input
+        class="formInput"
+        data-testid="password-input"
+        type="password"
+        value="password123"
+      />
+    </label>
+    <label
+      class="formLabel"
+    >
+      Repeat password:
+      <input
+        class="formInput"
+        data-testid="repeat-password-input"
+        type="password"
+        value="password321"
+      />
+    </label>
+    <button
+      class="button main "
+    >
+      Register
+    </button>
+  </form>
+</DocumentFragment>
+`;

@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProjectCreateForm Component default snapshot 1`] = `
+<DocumentFragment>
+  <form
+    class="projectCreateForm"
+  >
+    <label
+      class="formLabel"
+    >
+      Project Name:
+      <input
+        class="formInput"
+        type=""
+        value=""
+      />
+    </label>
+    <label
+      class="formLabel"
+    >
+      Project Description:
+      <textarea
+        class="formTextarea"
+      />
+    </label>
+    <button
+      class="button main "
+    >
+      Create
+    </button>
+  </form>
+</DocumentFragment>
+`;
+
+exports[`ProjectCreateForm Component error snapshot 1`] = `
+<DocumentFragment>
+  <form
+    class="projectCreateForm"
+  >
+    <div
+      class="error"
+    >
+      Enter project name.
+    </div>
+    <label
+      class="formLabel"
+    >
+      Project Name:
+      <input
+        class="formInput"
+        type=""
+        value=""
+      />
+    </label>
+    <label
+      class="formLabel"
+    >
+      Project Description:
+      <textarea
+        class="formTextarea"
+      />
+    </label>
+    <button
+      class="button main "
+    >
+      Create
+    </button>
+  </form>
+</DocumentFragment>
+`;

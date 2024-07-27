@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginForm Component default snapshot 1`] = `
+<DocumentFragment>
+  <form
+    class="loginForm"
+  >
+    <label
+      class="formLabel"
+    >
+      Username:
+      <input
+        class="formInput"
+        type=""
+        value=""
+      />
+    </label>
+    <label
+      class="formLabel"
+    >
+      Password:
+      <input
+        class="formInput"
+        type="password"
+        value=""
+      />
+    </label>
+    <button
+      class="button main "
+    >
+      Login
+    </button>
+  </form>
+</DocumentFragment>
+`;
+
+exports[`LoginForm Component empty fields error snapshot 1`] = `
+<DocumentFragment>
+  <form
+    class="loginForm"
+  >
+    <div
+      class="error"
+    >
+      Please fill in all fields.
+    </div>
+    <label
+      class="formLabel"
+    >
+      Username:
+      <input
+        class="formInput"
+        type=""
+        value=""
+      />
+    </label>
+    <label
+      class="formLabel"
+    >
+      Password:
+      <input
+        class="formInput"
+        type="password"
+        value=""
+      />
+    </label>
+    <button
+      class="button main "
+    >
+      Login
+    </button>
+  </form>
+</DocumentFragment>
+`;
+
+exports[`LoginForm Component incorrect credentials error snapshot 1`] = `
+<DocumentFragment>
+  <form
+    class="loginForm"
+  >
+    <div
+      class="error"
+    >
+      Incorrect username or password.
+    </div>
+    <label
+      class="formLabel"
+    >
+      Username:
+      <input
+        class="formInput"
+        type=""
+        value="testUser"
+      />
+    </label>
+    <label
+      class="formLabel"
+    >
+      Password:
+      <input
+        class="formInput"
+        type="password"
+        value="wrongpassword"
+      />
+    </label>
+    <button
+      class="button main "
+    >
+      Login
+    </button>
+  </form>
+</DocumentFragment>
+`;

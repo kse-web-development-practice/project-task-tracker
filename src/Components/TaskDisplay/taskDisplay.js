@@ -4,19 +4,24 @@ import styles from './taskDisplay.module.css'
 import { ListCheckbox } from '../ListCheckbox/listCheckbox'
 import { ListSelect } from '../ListSelect/listSelect'
 import { ListCell } from '../ListCell/listCell'
+import taskClient from '../../clients/task/taskClient'
 
 const importanceOptions = ['High', 'Medium', 'Low']
 
-export const TaskDisplay = ({ name, deadline, initialImportance, initialIsCompleted }) => {
+export const TaskDisplay = ({ id, name, deadline, initialImportance, initialIsCompleted }) => {
   const [importance, setImportance] = useState(initialImportance)
   const [isCompleted, setIsCompleted] = useState(initialIsCompleted)
 
   const handleImportanceChange = (e) => {
-    setImportance(e.target.value)
+    const newImportance = e.target.value
+    setImportance(newImportance)
+    taskClient.updateTask(id, { importance: newImportance })
   }
 
   const handleCompletionToggle = () => {
-    setIsCompleted(!isCompleted)
+    const newIsCompleted = !isCompleted
+    setIsCompleted(newIsCompleted)
+    taskClient.updateTask(id, { isCompleted: newIsCompleted })
   }
 
   return (
@@ -27,6 +32,7 @@ export const TaskDisplay = ({ name, deadline, initialImportance, initialIsComple
         <ListSelect
           value={importance}
           options={importanceOptions}
+          se
           onChange={handleImportanceChange}
         />
       </ListCell>
@@ -43,6 +49,7 @@ export const TaskDisplay = ({ name, deadline, initialImportance, initialIsComple
 }
 
 TaskDisplay.propTypes = {
+  id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   deadline: PropTypes.string.isRequired,
   initialImportance: PropTypes.oneOf(importanceOptions).isRequired,

@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Component authenticated snapshot 1`] = `
+<DocumentFragment>
+  <header
+    class="header"
+  >
+    <div
+      class="logo"
+    >
+      <img
+        alt="Logo"
+        src="test-file-stub"
+      />
+    </div>
+    <div
+      class="projectName"
+    >
+      Hi, user!
+    </div>
+    <button
+      class="button  "
+    >
+      Logout
+    </button>
+  </header>
+</DocumentFragment>
+`;
+
+exports[`Header Component not authenticated snapshot 1`] = `
+<DocumentFragment>
+  <header
+    class="header"
+  >
+    <div
+      class="logo"
+    >
+      <img
+        alt="Logo"
+        src="test-file-stub"
+      />
+    </div>
+    <div
+      class="projectName"
+    >
+      Overview
+    </div>
+    <div
+      class="auth"
+    >
+      <button
+        class="button  "
+      >
+        Log in
+      </button>
+      <button
+        class="button main "
+      >
+        Sign up
+      </button>
+    </div>
+  </header>
+</DocumentFragment>
+`;

@@ -29,30 +29,34 @@ export const List = ({ items, type }) => {
           }
         })()}
       </thead>
-      {items.map((item, index) => {
-        if (type === 'project') {
-          return (
-            <ProjectDisplay
-              key={index}
-              name={item.name}
-              totalTasks={item.totalTasks}
-              completedTasks={item.completedTasks}
-              initialStatus={item.initialStatus}
-            />
-          )
-        } else if (type === 'task') {
-          return (
-            <TaskDisplay
-              key={index}
-              name={item.name}
-              deadline={item.deadline}
-              initialImportance={item.initialImportance}
-              initialIsCompleted={item.initialIsCompleted}
-            />
-          )
-        }
-        return null
-      })}
+      <tbody>
+        {items.map((item, index) => {
+          if (type === 'project') {
+            return (
+              <ProjectDisplay
+                key={index}
+                id={item._id}
+                name={item.name}
+                totalTasks={item.totalTasks}
+                completedTasks={item.completedTasks}
+                initialStatus={item.status}
+              />
+            )
+          } else if (type === 'task') {
+            return (
+              <TaskDisplay
+                key={index}
+                id={item._id}
+                name={item.name}
+                deadline={item.deadline}
+                initialImportance={item.importance}
+                initialIsCompleted={item.isCompleted}
+              />
+            )
+          }
+          return null
+        })}
+      </tbody>
     </table>
   )
 }

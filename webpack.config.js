@@ -8,7 +8,7 @@ const localEnv = dotenv.config().parsed
 
 module.exports = (env) => {
     return {
-        entry: './src/index.js',
+        entry: path.resolve(__dirname, './src/index.js'),
         mode: env.dev === true ? 'development' : 'production',
         output: {
             filename: 'main.js',
@@ -63,13 +63,9 @@ module.exports = (env) => {
                 context: path.resolve(__dirname, 'src')
             }),
             new webpack.DefinePlugin({
-                'process.env.BASE_URL': JSON.stringify(process.env.BASE_URL),
-                'process.env.MAP_KEY': localEnv.MAP_KEY
-                    ? JSON.stringify(localEnv.MAP_KEY)
-                    : JSON.stringify(process.env.MAP_KEY),
-                'process.env.API_KEY': localEnv.API_KEY
-                    ? JSON.stringify(localEnv.API_KEY)
-                    : JSON.stringify(process.env.MAP_KEY)
+                'process.env.API_BASE_URL': localEnv.API_BASE_URL
+                    ? JSON.stringify(localEnv.API_BASE_URL)
+                    : JSON.stringify(process.env.API_BASE_URL),
             })
         ],
         devtool: env.dev ? 'eval-source-map' : 'source-map',
@@ -78,10 +74,8 @@ module.exports = (env) => {
                 directory: path.join(__dirname, 'dist')
             },
             compress: false,
-            port: 3000,
-            historyApiFallback: {
-                index: 'index.html'
-            }
+            port: 4000,
+            historyApiFallback: true
         }
     }
 }

@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProjectDisplay Component snapshot 1`] = `
+<DocumentFragment>
+  <table>
+    <tbody>
+      <tr
+        class="projectDisplay"
+      >
+        <td
+          class="listCell clickable"
+        >
+          Project 1
+        </td>
+        <td
+          class="listCell"
+        >
+          5/10
+        </td>
+        <td
+          class="listCell"
+        >
+          <select
+            class="listSelect"
+          >
+            <option
+              value="Completed"
+            >
+              Completed
+            </option>
+            <option
+              value="In progress"
+            >
+              In progress
+            </option>
+            <option
+              value="Not started"
+            >
+              Not started
+            </option>
+          </select>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</DocumentFragment>
+`;
