@@ -26,7 +26,7 @@ exports[`LoginForm Component default snapshot 1`] = `
       />
     </label>
     <button
-      class="button main"
+      class="button main "
     >
       Login
     </button>
@@ -65,7 +65,7 @@ exports[`LoginForm Component empty fields error snapshot 1`] = `
       />
     </label>
     <button
-      class="button main"
+      class="button main "
     >
       Login
     </button>
@@ -104,7 +104,7 @@ exports[`LoginForm Component incorrect credentials error snapshot 1`] = `
       />
     </label>
     <button
-      class="button main"
+      class="button main "
     >
       Login
     </button>

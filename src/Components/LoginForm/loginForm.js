@@ -24,7 +24,6 @@ export const LoginForm = ({ loginFunc }) => {
     const user = await loginFunc(username, password)
     if (!user) {
       setError('Incorrect username or password.')
-      console.log('SHIT')
       return
     }
     userContext.setUser(user.username, user.token)

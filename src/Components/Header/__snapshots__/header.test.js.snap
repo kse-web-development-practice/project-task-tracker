@@ -19,7 +19,7 @@ exports[`Header Component authenticated snapshot 1`] = `
       Hi, user!
     </div>
     <button
-      class="button "
+      class="button  "
     >
       Logout
     </button>
@@ -49,12 +49,12 @@ exports[`Header Component not authenticated snapshot 1`] = `
       class="auth"
     >
       <button
-        class="button "
+        class="button  "
       >
         Log in
       </button>
       <button
-        class="button main"
+        class="button main "
       >
         Sign up
       </button>

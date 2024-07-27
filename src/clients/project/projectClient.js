@@ -87,9 +87,30 @@ async function getProjectById(id) {
   return body.project
 }
 
+async function deleteProjectById(id) {
+  const response = await fetch(`${process.env.API_BASE_URL}/project/${id}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+
+  if (response.status == 500) {
+    throw new Error(`Error: ${response.statusText}`)
+  }
+
+  if (!response.ok) {
+    return null
+  }
+
+  const body = await response.json()
+  return body.message
+}
+
 export default {
   addProject,
   getProjectsByUser,
   updateProject,
-  getProjectById
+  getProjectById,
+  deleteProjectById
 }

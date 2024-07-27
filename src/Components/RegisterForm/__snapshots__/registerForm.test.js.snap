@@ -38,7 +38,7 @@ exports[`RegisterForm Component default snapshot 1`] = `
       />
     </label>
     <button
-      class="button main"
+      class="button main "
     >
       Register
     </button>
@@ -89,7 +89,7 @@ exports[`RegisterForm Component empty fields error snapshot 1`] = `
       />
     </label>
     <button
-      class="button main"
+      class="button main "
     >
       Register
     </button>
@@ -140,7 +140,7 @@ exports[`RegisterForm Component passwords not match error snapshot 1`] = `
       />
     </label>
     <button
-      class="button main"
+      class="button main "
     >
       Register
     </button>

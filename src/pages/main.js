@@ -42,7 +42,7 @@ export const Main = () => {
     <Layout>
       <Header pageName={'Hi, ' + username + '!'} isAuthenticated={isAuthenticated} />
       <Button isMain onClick={addFunc}>
-        Add
+        Add Project
       </Button>
       <List type={'project'} items={projects} />
     </Layout>

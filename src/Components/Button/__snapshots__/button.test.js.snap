@@ -3,7 +3,7 @@
 exports[`Button Component isMain is false 1`] = `
 <DocumentFragment>
   <button
-    class="button "
+    class="button  "
   >
     Click Me
   </button>
@@ -13,7 +13,7 @@ exports[`Button Component isMain is false 1`] = `
 exports[`Button Component isMain is true 1`] = `
 <DocumentFragment>
   <button
-    class="button main"
+    class="button main "
   >
     Click Me
   </button>

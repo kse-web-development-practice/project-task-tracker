@@ -20,15 +20,20 @@ export const Tasks = () => {
 
   const isAuthenticated = userContext.token ? true : false
 
-  if (!isAuthenticated) {
-    navigate('/')
-  }
-
   const addFunc = () => {
     navigate(`/tasks/create/${id}`)
   }
 
+  const deleteFunc = () => {
+    projectClient.deleteProjectById(id)
+    navigate('/')
+  }
+
   useEffect(() => {
+    if (!isAuthenticated) {
+      navigate('/')
+    }
+
     const getTasks = async () => {
       if (isAuthenticated) {
         const items = await taskClient.getTasksByProjectId(id)
@@ -51,9 +56,14 @@ export const Tasks = () => {
   return (
     <Layout>
       <Header pageName={pageName} isAuthenticated={isAuthenticated} />
-      <Button isMain onClick={addFunc}>
-        Add
-      </Button>
+      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+        <Button isMain onClick={addFunc}>
+          Add Task
+        </Button>
+        <Button isRed onClick={deleteFunc}>
+          Delete Project
+        </Button>
+      </div>
       <List type={'task'} items={tasks} />
       {description}
     </Layout>

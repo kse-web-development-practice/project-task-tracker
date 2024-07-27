@@ -24,7 +24,7 @@ exports[`ProjectCreateForm Component default snapshot 1`] = `
       />
     </label>
     <button
-      class="button main"
+      class="button main "
     >
       Create
     </button>
@@ -61,7 +61,7 @@ exports[`ProjectCreateForm Component error snapshot 1`] = `
       />
     </label>
     <button
-      class="button main"
+      class="button main "
     >
       Create
     </button>
