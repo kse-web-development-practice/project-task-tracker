@@ -27,6 +27,8 @@ module.exports = {
   globals: {
     process: true,
     global: true,
-    module: true
+    module: true,
+    cy: true,
+    Cypress: true
   }
 }
